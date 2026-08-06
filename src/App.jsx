@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import Hero from "./sections/Hero";
+import About from "./sections/About";
 
 
 function App() {
@@ -9,8 +10,8 @@ function App() {
       <Header />
       <Hero />
       <main className="mx-auto max-w-7xl">
+      <About />
         {/*
-        <About />
         <Features />
         <Insights />
         <Contact />
