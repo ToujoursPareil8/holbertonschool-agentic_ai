@@ -1,21 +1,20 @@
 import React from "react";
 import Header from "./components/Header";
+import Hero from "./sections/Hero";
 
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="flex min-h-screen flex-col bg-slate-50">
       <Header />
-      <main className="pt-20">
+      <Hero />
+      <main className="mx-auto max-w-7xl">
         {/*
-        <Hero />
         <About />
         <Features />
         <Insights />
         <Contact />
         <Footer />
-        <h1 className="text-4xl text-red-500">Mon super projet React !!!</h1>
-        <h2 className="text-2xl text-blue-500">Coucou</h2>
         */}
       </main>
     </div>
