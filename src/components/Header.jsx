@@ -17,14 +17,14 @@ const Header = () => {
             </div>
 
             {/*Semantic <nav> element for navigation*/}
-            <nav className="flex justify-center gap-4 text-sm font-medium text-slate-500">
-                <a href="#about" className="hover:text-slate-300">About</a>
-                <a href="#features" className="hover:text-slate-300">Features</a>
-                <a href="#insights" className="hover:text-slate-300">Insights</a>
-                <a href="#contact" className="hover:text-slate-300">Contact</a>
+            <nav className="md:flex hidden justify-center gap-4 text-sm font-medium text-slate-500">
+                <a href="#about-section" className="hover:text-slate-300">About</a>
+                <a href="#features-section" className="hover:text-slate-300">Features</a>
+                <a href="#insights-section" className="hover:text-slate-300">Insights</a>
+                <a href="#contact-section" className="hover:text-slate-300">Contact</a>
             </nav>
             <div>
-                <a href="#enroll" className="bg-violet-500 text-slate-50 text-sm font-semibold py-2 px-4 rounded-md hover:bg-violet-600">Enroll now</a>
+                <a href="#enroll-section" className="bg-violet-500 text-slate-50 text-sm font-semibold py-2 px-4 rounded-md hover:bg-violet-600">Enroll now</a>
             </div>
         </div>
     </header>
