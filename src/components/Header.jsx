@@ -12,7 +12,7 @@ const Header = () => {
         <div className="flex items-center px-8 py-4 max-w-7xl mx-auto w-full"> 
             {/*logo*/}
             <div className="flex-1 flex items-center gap-3">
-                <img src="/logo.png" alt="Logo" className="w-8 h-8" />
+                <img src="public/icon.svg" alt="Logo" className="w-8 h-8" />
                 <span className="font-bold text-lg text-white">Agentic AI</span>
             </div>
             <div className="flex items-center gap-8">
