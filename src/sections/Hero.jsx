@@ -1,4 +1,5 @@
 import React from "react";
+import { Sparkle } from "lucide-react";
 
 const StatData = [
     { id: 1, value: "10K+", label: "Active agents" },
@@ -14,10 +15,10 @@ const Hero = () => {
         className="flex flex-col items-center justify-center text-center px-6 py-20 overflow-hidden bg-gradient-to-br from-violet-950 to-slate-950 text-white"> 
             <div className="relative z-10 flex flex-col items-center max-w-4xl w-full">
                 {/*Eyebrow*/}
-                <div className="px-4 py-2 text-xs text-violet-300 rounded-full border border-violet-500/20 bg-violet-500/10">
-                    {/* <span className="texte-violet-300">*</span> */}
+                <div className="flex items-center gap-2 px-4 py-2 text-xs text-violet-300 rounded-full border border-violet-500/20 bg-violet-500/10">
+                    <Sparkle size={12} />
                     The future of coding
-                    {/* <span className="texte-violet-300">*</span> */}
+                    <Sparkle size={12} />
                 </div>
                 {/*Main Title*/}
                 <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-none">

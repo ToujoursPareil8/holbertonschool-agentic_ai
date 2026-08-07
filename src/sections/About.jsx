@@ -1,13 +1,16 @@
 import React from "react";
 import { steps } from "../data/steps";
+import { Sparkle } from "lucide-react";
 
 const About = () => {
     return (
-        <section id="about-section" className="flex flex-col items-center justify-center text-center px-6 py-20 overflow-hidden bg-gradient-to-br from-violet-950 to-slate-950 text-white">
+        <section id="about-section" className="flex flex-col items-center justify-center text-center py-20 overflow-hidden bg-black text-white">
             <div className="relative z-10 flex flex-col items-center max-w-4xl w-full">
                 {/*Eyebrow*/}
-                <div className="px-4 py-2 text-xs text-violet-300 rounded-full border border-violet-500/20 bg-violet-500/10">
+                <div className="flex items-center gap-2 px-4 py-2 text-xs text-violet-300 rounded-full border border-violet-500/20 bg-violet-500/10">
+                    <Sparkle size={12} />
                     What is agentic AI?
+                    <Sparkle size={12} />
                 </div>
                 {/* Section h2*/}
                 <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-none mt-4">
