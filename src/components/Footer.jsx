@@ -97,7 +97,7 @@ const Footer = () => {
 
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 border-t border-white/5 mt-12 pt-8">
                     <p className="text-sm text-slate-500">
-                        © {currentYear} Your Name
+                        © {currentYear} Iriñy Aridy
                     </p>
                     <p className="text-sm text-slate-500">
                         Built for the Holberton School Front-end Frameworks curriculum.
