@@ -1,5 +1,5 @@
 import React from "react";
-import { Bot, Instagram, Music2, X, Youtube } from "lucide-react";
+import { Bot, Camera, Music2, X, Play } from "lucide-react";
 
 
 const navigationLinks = [
@@ -23,10 +23,10 @@ const curriculumLinks = [
 ];
 
 const socialLinks = [
-    { icon: Instagram, label: "Instagram", href: "https://instagram.com" },
+    { icon: Camera, label: "Instagram", href: "https://instagram.com" },
     { icon: Music2, label: "TikTok", href: "https://tiktok.com" },
     { icon: X, label: "X", href: "https://x.com" },
-    { icon: Youtube, label: "YouTube", href: "https://youtube.com" },
+    { icon: Play, label: "Youtube", href: "https://youtube.com" },
 ];
 
 const FooterLinkGroup = ({ title, links, external }) => (
@@ -57,12 +57,10 @@ const Footer = () => {
         <footer className="bg-black text-white border-t border-white/5">
             <div className="max-w-6xl mx-auto px-6 py-16">
                 <div className="flex flex-col md:flex-row md:justify-between gap-12">
-                    {/* Marque */}
+                    {/* logo */}
                     <div className="max-w-xs">
                         <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 shadow-lg shadow-violet-500/40">
-                                <Bot size={18} className="text-white" aria-hidden="true" />
-                            </div>
+                            <img src="./icon.svg" alt="Logo" className="w-8 h-8" />
                             <span className="font-bold text-lg text-white">Agentic AI</span>
                         </div>
                         <p className="text-sm text-slate-500 mt-4">
@@ -96,7 +94,7 @@ const Footer = () => {
                     />
                     <FooterLinkGroup title="Curriculum" links={curriculumLinks} external />
                 </div>
-                
+
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 border-t border-white/5 mt-12 pt-8">
                     <p className="text-sm text-slate-500">
                         © {currentYear} Your Name
