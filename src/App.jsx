@@ -17,10 +17,8 @@ function App() {
         <Features />
         <Insights />
         <Contact />
-        {/*
-        
         <Footer />
-        */}
+
       </main>
     </div>
     
