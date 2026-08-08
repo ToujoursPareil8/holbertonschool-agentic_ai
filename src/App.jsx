@@ -3,7 +3,8 @@ import Header from "./components/Header";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Features from "./sections/Features";
-import Insights from "./sections/Insights"
+import Insights from "./sections/Insights";
+import Contact from "./sections/Contact"
 
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
         <About />
         <Features />
         <Insights />
-        {/*
         <Contact />
+        {/*
+        
         <Footer />
         */}
       </main>
