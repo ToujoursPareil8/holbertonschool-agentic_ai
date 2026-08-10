@@ -1,5 +1,5 @@
 import React from "react";
-import { Bot, Camera, Music2, X, Play } from "lucide-react";
+import { Camera, Music2, X, Play } from "lucide-react";
 
 
 const navigationLinks = [
