@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import {
-    Sparkle,
-    Sparkles,
     BookOpen,
     Users,
+    Sparkles,
     User,
     AtSign,
     Mail,
     ArrowRight,
 } from "lucide-react";
+import Eyebrow from "../components/Eyebrow";
+import SectionBackground from "../components/SectionBackground";
 
-{/* message feedaback*/}
 const msgDef = "Fill in the form and we'll get back to you within 24h.";
 const msgSending = "Sending your message...";
 const msgSent = "Message sent! We'll be in touch soon.";
@@ -22,54 +22,38 @@ const highlights = [
 ];
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: "",
-    });
-
+    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [isSending, setIsSending] = useState(false);
-
     const [feedback, setFeedback] = useState(msgDef);
 
     const isNameValid = formData.name.trim().length >= 2;
-    const isEmailValid =
-        formData.email.includes("@") && formData.email.includes(".");
+    const isEmailValid = formData.email.includes("@") && formData.email.includes(".");
     const isMessageValid = formData.message.trim().length >= 10;
     const isFormValid = isNameValid && isEmailValid && isMessageValid;
 
     useEffect(() => {
         if (feedback !== msgSent) return;
-
-        const timer = setTimeout(() => {
-            setFeedback(msgDef);
-        }, 4000);
-
+        const timer = setTimeout(() => setFeedback(msgDef), 4000);
         return () => clearTimeout(timer);
     }, [feedback]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+        setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         if (!isFormValid || isSending) return;
 
         setIsSending(true);
         setFeedback(msgSending);
-
         await new Promise((resolve) => setTimeout(resolve, 1500));
-
         setIsSending(false);
         setFeedback(msgSent);
         setFormData({ name: "", email: "", message: "" });
     };
+
     const focusColorClass = (value, isValid) => {
         if (value.length === 0) return "focus:border-violet-500";
         return isValid ? "focus:border-violet-500" : "focus:border-red-500";
@@ -79,27 +63,18 @@ const Contact = () => {
         "w-full px-4 py-2 text-slate-50 rounded-md border border-slate-800 bg-black placeholder:text-slate-500 focus:outline-none transition-colors duration-200";
 
     return (
-        <section
-            id="contact-section"
-            className="py-24 bg-black relative overflow-hidden text-white"
-        >
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:72px_72px] opacity-30 pointer-events-none" />
-            <div className="max-w-3xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
-                {/* yebrow */}
-                <div className="flex items-center gap-2 px-4 py-2 text-xs text-violet-300 rounded-full border border-violet-500/20 bg-violet-500/10">
-                    <Sparkle size={12} />
-                    Start your AI journey
-                    <Sparkle size={12} />
-                </div>
+        <section id="contact-section" className="py-24 bg-black relative overflow-hidden text-white">
+            <SectionBackground />
 
-                {/* h2*/}
+            <div className="max-w-3xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+                <Eyebrow text="Start your AI journey" />
+
                 <h2 className="text-5xl md:text-7xl font-black tracking-tight leading-none mt-6">
                     Ready to Explore
                     <br />
                     <span className="text-violet-300">Agentic AI?</span>
                 </h2>
 
-                {/* button*/}
                 <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
                     <a
                         href="https://www.holbertonschool.com"
@@ -123,25 +98,16 @@ const Contact = () => {
                 <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mt-6">
                     {highlights.map(({ icon: Icon, label }) => (
                         <li key={label} className="flex items-center gap-2">
-                            <Icon
-                                size={16}
-                                className="text-violet-400"
-                                aria-hidden="true"
-                            />
+                            <Icon size={16} className="text-violet-400" aria-hidden="true" />
                             <span className="text-sm text-slate-400">{label}</span>
                         </li>
                     ))}
                 </ul>
 
-                {/* formulaire */}
                 <div className="w-full p-8 rounded-3xl border border-slate-800 bg-slate-950 shadow-xl shadow-slate-950/40 mt-10 text-left">
                     <form onSubmit={handleSubmit} autoComplete="off" noValidate>
-                        {/* Nom complet */}
                         <div className="mb-5">
-                            <label
-                                htmlFor="contact-name"
-                                className="flex items-center gap-2 text-sm font-semibold text-slate-100 mb-2"
-                            >
+                            <label htmlFor="contact-name" className="flex items-center gap-2 text-sm font-semibold text-slate-100 mb-2">
                                 <User size={16} className="text-violet-400" aria-hidden="true" />
                                 Full name
                             </label>
@@ -153,19 +119,12 @@ const Contact = () => {
                                 placeholder="Your full name..."
                                 value={formData.name}
                                 onChange={handleChange}
-                                className={`${baseInputClasses} ${focusColorClass(
-                                    formData.name,
-                                    isNameValid
-                                )}`}
+                                className={`${baseInputClasses} ${focusColorClass(formData.name, isNameValid)}`}
                             />
                         </div>
 
-                        {/* email */}
                         <div className="mb-5">
-                            <label
-                                htmlFor="contact-email"
-                                className="flex items-center gap-2 text-sm font-semibold text-slate-100 mb-2"
-                            >
+                            <label htmlFor="contact-email" className="flex items-center gap-2 text-sm font-semibold text-slate-100 mb-2">
                                 <AtSign size={16} className="text-violet-400" aria-hidden="true" />
                                 Email
                             </label>
@@ -177,19 +136,12 @@ const Contact = () => {
                                 placeholder="you@example.com"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className={`${baseInputClasses} ${focusColorClass(
-                                    formData.email,
-                                    isEmailValid
-                                )}`}
+                                className={`${baseInputClasses} ${focusColorClass(formData.email, isEmailValid)}`}
                             />
                         </div>
 
-                        {/* message */}
                         <div className="mb-6">
-                            <label
-                                htmlFor="contact-message"
-                                className="flex items-center gap-2 text-sm font-semibold text-slate-100 mb-2"
-                            >
+                            <label htmlFor="contact-message" className="flex items-center gap-2 text-sm font-semibold text-slate-100 mb-2">
                                 <Mail size={16} className="text-violet-400" aria-hidden="true" />
                                 Message
                             </label>
@@ -201,14 +153,10 @@ const Contact = () => {
                                 placeholder="Tell us about your project or learning goals!"
                                 value={formData.message}
                                 onChange={handleChange}
-                                className={`${baseInputClasses} resize-none ${focusColorClass(
-                                    formData.message,
-                                    isMessageValid
-                                )}`}
+                                className={`${baseInputClasses} resize-none ${focusColorClass(formData.message, isMessageValid)}`}
                             />
                         </div>
 
-                        {/* submit */}
                         <button
                             type="submit"
                             disabled={!isFormValid || isSending}
@@ -217,11 +165,7 @@ const Contact = () => {
                             {isSending ? "Sending..." : "Send message"}
                         </button>
 
-                        {/* feedabck*/}
-                        <p
-                            className="text-sm text-slate-400 mt-4 text-center"
-                            role="status"
-                        >
+                        <p className="text-sm text-slate-400 mt-4 text-center" role="status">
                             {feedback}
                         </p>
                     </form>
