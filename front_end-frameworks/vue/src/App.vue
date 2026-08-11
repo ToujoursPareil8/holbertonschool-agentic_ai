@@ -1,7 +1,9 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { Camera} from '@lucide/vue'
 </script>
 
 <template>
-  <HelloWorld />
+  <h1>First world problem</h1>
+  <h2>Yes they exist for real</h2>
+  <Camera />
 </template>

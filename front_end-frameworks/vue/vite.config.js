@@ -8,4 +8,9 @@ export default defineConfig({
     vue(),
     tailwindcss(),
   ],
+  base: '/holbertonschool-agentic_ai/',
+  server: {
+    host: "0.0.0.0",
+    port: 3000
+  }
 })
