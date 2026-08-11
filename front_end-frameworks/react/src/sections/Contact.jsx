@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-    BookOpen,
-    Users,
-    Sparkles,
-    User,
-    AtSign,
-    Mail,
-    ArrowRight,
-} from "lucide-react";
+import { BookOpen, Users, Sparkles, User, AtSign, Mail, ArrowRight } from "lucide-react";
 import Eyebrow from "../components/Eyebrow";
 import SectionBackground from "../components/SectionBackground";
 
