@@ -1,9 +1,5 @@
 import React from 'react';
 
-// Le placement en grille (col-span de la 1re carte) est désormais géré
-// par le <li> parent dans Insights.jsx, pas ici : ce composant ne
-// représente plus que le contenu visuel de la carte, indépendamment
-// de sa position dans la grille.
 const InsightCard = ({ category, title, description, image }) => {
     return (
         <article className="relative flex flex-col justify-end overflow-hidden rounded-3xl border border-white/5 bg-slate-950 shadow-xl shadow-slate-950/40 group transition-transform hover:-translate-y-1 duration-300 min-h-[400px] text-left h-full">
