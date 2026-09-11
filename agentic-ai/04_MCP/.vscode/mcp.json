@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "crm-server": {
+      "command": "node",
+      "args": [
+        "C:/holberton/holbertonschool-agentic_ai-1/agentic-ai/04_MCP/mcp_server.js"
+      ]
+    }
+  }
+}
