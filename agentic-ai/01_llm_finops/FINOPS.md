@@ -1,20 +1,23 @@
-Param mesure
+# Param mesure
 
-tokenizer : GPT-5.c & O1/3
-poids token : 75
-taille du code fourni in: 15000
-taille out : 500
+## Tokenizer
+- GPT-5.c & O1/3
+- Poids token : 75
 
-volume
-tt i: 15075
-tt out: 500
+## Taille
+- Taille du code fourni (in) : 15000
+- Taille out : 500
 
-tarif :
-$5.00/1m tk
-$15 /1m tk
+## Volume
+- Total in : 15075
+- Total out : 500
 
-calcul
+## Tarif
+- $5.00 / 1M tk
+- $15 / 1M tk
 
-cout in : (15075/1000000)*5= 0.0075375
-cout out :(500/1000000)*15= 0.00750
-cout total 0.082875$
+## Calcul
+
+- Coût in : (15075 / 1 000 000) * 5 = 0.0075375
+- Coût out : (500 / 1 000 000) * 15 = 0.00750
+- **Coût total : 0.082875 $**

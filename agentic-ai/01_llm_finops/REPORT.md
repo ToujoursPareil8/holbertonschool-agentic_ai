@@ -1,12 +1,30 @@
-demande tech : Écris un script pour scraper une page web et sauvegarder les données, en gérant les erreurs
+# Rapport d'Évaluation : Comparatif des Modèles
 
-models : ChatGPT-5.6 Luna
-         Claude Sonnet 5
+## Demande Technique Volontairement Floue
 
-dif observées:
+```
+Écris un script pour scraper une page web et sauvegarder les données, en gérant les erreurs
+```
 
-GPT écrut un script générique léger (70 lignes), non commenté, avec 2 fonctions scraper et sauvegarder pas de main explicite. Il suppose que le site a une structure précise. Ne fait aucun retry réseau donc requete échouée = abandon.
+## Modèles Évalués
 
-Claude écrit un script plus lourd (193 lignes), commenté, plus modulaire : il crée des exception customisée, séparation de fetch/parse/save/ochestrate et fonction main(). Effectue 3 retry  réseau avec backoff.
+- ChatGPT-5.6 Luna
+- Claude Sonnet 5
 
-choix arbitraires et pb : les langages utilisés sont choisi arbitrairement et
+## Résumé des Différences Observées
+
+**ChatGPT-5.6 Luna :**
+- Produit un script générique et léger (environ 70 lignes), sans commentaires.
+- S'appuie sur seulement deux fonctions (scraper et sauvegarder), sans point d'entrée `main()` explicite.
+- Suppose de manière rigide une structure spécifique du site à scraper.
+- Ne gère aucune retentative réseau : une seule requête échouée entraîne un abandon immédiat.
+
+**Claude Sonnet 5 :**
+- Produit une solution plus dense et structurée (environ 193 lignes), abondamment commentée.
+- Adopte une approche modulaire avec création d'exceptions personnalisées, une séparation stricte des responsabilités (fetch, parse, save, orchestrate) et une fonction `main()`.
+- Intègre un mécanisme de résilience réseau avec jusqu'à 3 retentatives en backoff exponentiel.
+
+## Problèmes et Choix Arbitraires Identifiés
+
+1. **Langage de programmation non spécifié** : Les modèles choisissent arbitrairement le langage et l'écosystème de bibliothèques sans demande explicite du besoin.
+2. **Absence de cas d'usage cible** : Sans cible définie, les modèles doivent inventer la structure HTML du site cible, ce qui rend le script inutilisable en l'état sans adaptation préalable.
