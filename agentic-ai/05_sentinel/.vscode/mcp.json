@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "sentinel-server": {
+      "command": "node",
+      "args": [
+        "C:/holberton/holbertonschool-agentic_ai-1/agentic-ai/05_sentinel/mcp_server.js"
+      ]
+    }
+  }
+}

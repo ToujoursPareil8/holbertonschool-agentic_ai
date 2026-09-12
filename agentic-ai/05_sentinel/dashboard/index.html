@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sentinel / VS Code issue pulse</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main class="shell">
+			<header class="topbar">
+				<a class="brand" href="https://github.com/microsoft/vscode" target="_blank" rel="noreferrer">
+					<span class="brand-mark">S</span>
+					<span>Sentinel<span class="brand-slash">/</span>05</span>
+				</a>
+				<div class="sync-status"><span class="status-dot"></span><span id="sync-label">MCP snapshot</span></div>
+			</header>
+
+			<section class="intro">
+				<div>
+					<p class="eyebrow">Repository intelligence</p>
+					<h1>Issue pulse<span class="accent">.</span></h1>
+					<p class="lede">A focused read on the latest signals from <strong>microsoft/vscode</strong>.</p>
+				</div>
+				<div class="repo-chip"><span class="repo-icon">⌘</span><span>microsoft / vscode</span></div>
+			</section>
+
+			<section class="metrics" aria-label="Issue metrics">
+				<article class="metric metric-total"><span class="metric-label">Tracked issues</span><strong id="total-count">--</strong><span class="metric-note">latest MCP batch</span></article>
+				<article class="metric metric-open"><span class="metric-label">Open</span><strong id="open-count">--</strong><span class="metric-note">needs attention</span></article>
+				<article class="metric metric-closed"><span class="metric-label">Closed</span><strong id="closed-count">--</strong><span class="metric-note">resolved signals</span></article>
+				<article class="metric metric-rate"><span class="metric-label">Open rate</span><strong id="open-rate">--</strong><span class="metric-note">of this snapshot</span></article>
+			</section>
+
+			<section class="toolbar" aria-label="Issue controls">
+				<div class="toolbar-copy"><span class="eyebrow">Live queue</span><h2>Recent issues</h2></div>
+				<div class="controls">
+					<label class="search"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search issues" /></label>
+					<div class="segmented" role="group" aria-label="Filter by state">
+						<button class="filter-button active" data-filter="all" type="button">All</button>
+						<button class="filter-button" data-filter="open" type="button">Open</button>
+						<button class="filter-button" data-filter="closed" type="button">Closed</button>
+					</div>
+				</div>
+			</section>
+
+			<section id="issue-list" class="issue-list" aria-live="polite"></section>
+			<p id="empty-state" class="empty-state" hidden>No issues match this view.</p>
+
+			<footer class="footer"><span>Source: GitHub Issues API via Sentinel MCP</span><span id="updated-label">Awaiting data</span></footer>
+		</main>
+		<script src="app.js" type="module"></script>
+	</body>
+</html>
