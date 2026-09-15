@@ -1,0 +1,10 @@
+{
+  "name": "tasks-json-reader",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dockerized JSON task reader that prints the first pending action.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node --test ./test/*.test.js"
+  }
+}
