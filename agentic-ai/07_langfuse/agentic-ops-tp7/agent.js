@@ -23,8 +23,8 @@ const openai = observeOpenAI(new OpenAI({
 const SEUIL_TOKENS = 150;
 
 async function demanderValidationHumaine(action) {
-    console.log(`\n🛑 [GOUVERNANCE - SÉCURITÉ] L'application s'apprête à se terminer. Action proposée :`);
-    console.log(`👉 "${action}"\n`);
+    console.log(`\n [GOUVERNANCE - SÉCURITÉ] L'application s'apprête à se terminer. Action proposée :`);
+    console.log(` "${action}"\n`);
 
     const rl = readline.createInterface({ input, output });
     const reponse = await rl.question("L'IA souhaite exécuter cette commande. Autoriser ? (o/n) : ");
