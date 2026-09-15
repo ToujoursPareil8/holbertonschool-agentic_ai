@@ -1,0 +1,12 @@
+.git
+.gitignore
+node_modules
+.npm
+.nyc_output
+coverage
+.vscode
+.DS_Store
+*.log
+.venv
+**/.venv
+**/node_modules

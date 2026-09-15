@@ -1,0 +1,12 @@
+services:
+  tasks-reader:
+    build: .
+    image: tasks-json-reader:latest
+    environment:
+      TASKS_FILE_PATH: /app/tasks.json
+    volumes:
+      - ./tasks.json:/app/tasks.json:ro
+    read_only: true
+    tmpfs:
+      - /tmp
+    restart: unless-stopped
