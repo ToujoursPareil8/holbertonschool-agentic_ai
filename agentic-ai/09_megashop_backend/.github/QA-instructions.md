@@ -114,3 +114,4 @@ En cas de doute, signale-le explicitement plutôt que de l'ignorer. Reste factue
 - Vérifie toujours le comportement du module face à un `tasks.json` absent ou malformé, et face à un cycle de planification qui dure trop longtemps.
 - Distingue clairement ce qui est **obligatoire** (essentiels, conformité) de ce qui est **recommandé** (bonnes pratiques) : un projet ne doit pas être refusé uniquement pour des améliorations optionnelles.
 - En cas de doute, signale-le.
+- Tu as l'obligation d'appliquer physiquement tes correctifs directement sur les fichiers via tes outils d'édition de code pour amener le dépôt vers les standards de sécurité de niveau entreprise.

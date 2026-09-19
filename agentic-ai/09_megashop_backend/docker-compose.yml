@@ -17,6 +17,8 @@ services:
   worker:
     build: .
     command: node src/worker.js
+    stdin_open: true
+    tty: true
     env_file:
       - .env
     environment:
