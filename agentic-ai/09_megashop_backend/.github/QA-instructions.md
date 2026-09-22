@@ -38,6 +38,7 @@ En cas de doute, signale-le explicitement plutôt que de l'ignorer. Reste factue
 - [ ] Les fichiers copiés appartiennent-ils à l'utilisateur non-root (`COPY --chown=node:node`) ?
 - [ ] Un build multi-stage est-il utilisé si le projet a une étape de build ? (Non requis pour un simple script Node.)
 - [ ] `EXPOSE` correspond-il au port réellement utilisé ?
+- [ ] `HEALTHCHECK` prend-il en compte REDIS + `depends_on: condition: service_healthy` ?
 
 ---
 
@@ -48,7 +49,7 @@ En cas de doute, signale-le explicitement plutôt que de l'ignorer. Reste factue
 - [ ] **JSON invalide** : le `JSON.parse` est-il entouré d'un `try/catch` ? Un fichier vide ou tronqué fait-il planter le process ?
 - [ ] **Écritures concurrentes** : deux opérations qui lisent-modifient-écrivent en même temps peuvent-elles écraser des données ? Le code prévoit-il au moins un mécanisme simple (file d'attente, verrou en mémoire, écriture via fichier temporaire puis renommage) ?
 - [ ] **Erreurs non gérées** : les promesses rejetées et exceptions sont-elles catchées ? Un handler global (`process.on('unhandledRejection')`, `process.on('uncaughtException')`) log-t-il l'erreur avant l'arrêt ?
-
+- [ ] **Retry côté aplication** : le client Redus doit implémenter une stratégie de reconnexion retry(backoff)lorsque la connexion initiale ou une connexion en cours échoue, plutôt que de laisser une exception non gérée faire planter le processus ou bloquer indéfiniment les requêtes.
 ### Boucle de planification
 - [ ] Si `setInterval` est utilisé avec une fonction asynchrone : que se passe-t-il quand un cycle dure plus longtemps que l'intervalle (exécutions qui se chevauchent sur les mêmes tâches) ?
 - [ ] Un `setTimeout` récursif est-il utilisé à la place ? Si oui, la relance est-elle placée dans un `finally` pour survivre à une erreur ?
@@ -69,6 +70,9 @@ En cas de doute, signale-le explicitement plutôt que de l'ignorer. Reste factue
 - [ ] Les identifiants de tâches sont-ils uniques et non prévisibles (ex. `crypto.randomUUID()`) plutôt qu'un simple compteur ?
 - [ ] La suppression ou la modification d'une tâche vérifie-t-elle d'abord qu'elle existe ?
 - [ ] Les codes de retour distinguent-ils erreurs client (400/404) et erreurs serveur (500) ?
+
+### 
+
 
 ---
 
@@ -110,3 +114,4 @@ En cas de doute, signale-le explicitement plutôt que de l'ignorer. Reste factue
 - Vérifie toujours le comportement du module face à un `tasks.json` absent ou malformé, et face à un cycle de planification qui dure trop longtemps.
 - Distingue clairement ce qui est **obligatoire** (essentiels, conformité) de ce qui est **recommandé** (bonnes pratiques) : un projet ne doit pas être refusé uniquement pour des améliorations optionnelles.
 - En cas de doute, signale-le.
+- Tu as l'obligation d'appliquer physiquement tes correctifs directement sur les fichiers via tes outils d'édition de code pour amener le dépôt vers les standards de sécurité de niveau entreprise.
